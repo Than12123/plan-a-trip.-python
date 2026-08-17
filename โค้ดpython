@@ -1,0 +1,53 @@
+# โปรแกรมวางแผนการท่องเที่ยว
+
+print("===== Travel Planner =====")
+
+# รับข้อมูลจากผู้ใช้
+destination = input("จุดหมายปลายทาง: ")
+days = int(input("จำนวนวัน: "))
+people = int(input("จำนวนคน: "))
+budget = float(input("งบประมาณทั้งหมด: "))
+
+print("\nเลือกรูปแบบการท่องเที่ยว")
+print("1. กิน")
+print("2. ช้อปปิ้ง")
+print("3. ธรรมชาติ")
+
+style = input("เลือกหมายเลข: ")
+
+# แสดงรูปแบบการเที่ยว
+if style == "1":
+    travel_style = "กิน"
+elif style == "2":
+    travel_style = "ช้อปปิ้ง"
+elif style == "3":
+    travel_style = "ธรรมชาติ"
+else:
+    travel_style = "ทั่วไป"
+
+# สร้างแผนเที่ยว
+print("\n===== แผนการท่องเที่ยว =====")
+print("จุดหมาย:", destination)
+print("จำนวนวัน:", days)
+print("จำนวนคน:", people)
+print("รูปแบบการเที่ยว:", travel_style)
+print("งบประมาณ:", budget, "บาท")
+
+print("\nกำลังสร้างแผนการท่องเที่ยว...")
+
+# คำนวณงบประมาณต่อวัน
+daily_budget = budget / days
+
+print("งบประมาณต่อวัน:", round(daily_budget, 2), "บาท")
+
+# รับค่าใช้จ่าย
+expense = float(input("\nกรอกค่าใช้จ่ายที่เกิดขึ้น: "))
+
+# ตรวจสอบงบประมาณ
+if expense > budget:
+    print("แจ้งเตือน: ค่าใช้จ่ายเกินงบประมาณ")
+else:
+    remaining = budget - expense
+    print("งบประมาณคงเหลือ:", remaining, "บาท")
+
+print("\n===== แผนการท่องเที่ยวเสร็จสมบูรณ์ =====")
